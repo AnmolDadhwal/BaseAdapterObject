@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BaseAdapterObject</string>
+    <string name="enter_your_name">Enter Student Name</string>
+    <string name="Submit">Submit</string>
+    <string name="enter_roll_no">Enter RollNo</string>
+    <string name="enter_subject">Enter Subject</string>
+    <string name="update">Update</string>
+</resources>

@@ -10,8 +10,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.task.baseadapterobject.databinding.ActivityMainBinding
 import com.task.baseadapterobject.databinding.CustomdialogBinding
-import com.task.baseadapterobject.databinding.CustomdialoglistBinding
-import java.util.Objects
 
 class MainActivity : AppCompatActivity() {
     var binding:ActivityMainBinding?=null
@@ -27,13 +25,13 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding?.listView?.setOnItemClickListener { parent, view, position, id ->
+        binding?.listView?.setOnItemClickListener { _, _, position,_ ->
             var dialogBinding= CustomdialogBinding.inflate(layoutInflater)
             var dialog= Dialog(this).apply{
                 setContentView(dialogBinding.root)
                 show()
             }
-            val update:String="Update"
+            val update="Update"
             dialogBinding.btnSubmit.setText(update)
             val upRollNo:String=studentList[position].rollNo.toString()
             dialogBinding.etRollNo.setText(upRollNo)
@@ -57,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             }
             dialog.show()
         }
-        binding?.listView?.setOnItemLongClickListener { parent, view, position, id ->
+        binding?.listView?.setOnItemLongClickListener { _, _, position, _ ->
             AlertDialog.Builder(this@MainActivity).apply {
                 setTitle("DELETE")
                 setMessage("Are you really want to delete the information")

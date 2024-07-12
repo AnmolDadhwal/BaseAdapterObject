@@ -19,7 +19,7 @@ class ListAdapter(var list:ArrayList<Student>): BaseAdapter(){
         return list[position]
     }
     override fun getItemId(position: Int): Long {
-        return 1L
+        return position.toLong()
     }
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = LayoutInflater.from(parent?.context).inflate(R.layout.activity_list_adapter,parent,false)
